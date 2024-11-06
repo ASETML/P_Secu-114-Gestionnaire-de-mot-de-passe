@@ -4,11 +4,12 @@
     {
         static void Main(string[] args)
         {
+            Menu mainMenu = new Menu();
+
             MasterPassword.Key = Console.ReadLine();
             Console.WriteLine(MasterPassword.Key);
-            File.WriteAllText("pwd.txt", EncryptionManager.Encrypt("etml"));
-            EncryptionManager.Decrypt(EncryptionManager.Encrypt("aabbcc ■☺"));
+            File.WriteAllText("pwd.txt", EncryptionManager.Encrypt(Console.ReadLine()));
             Console.WriteLine(EncryptionManager.Decrypt(File.ReadAllText("pwd.txt")));
-        }
+           }
     }
 }
