@@ -4,7 +4,11 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            MasterPassword.Key = Console.ReadLine();
+            Console.WriteLine(MasterPassword.Key);
+            File.WriteAllText("pwd.txt", EncryptionManager.Encrypt("etml"));
+            EncryptionManager.Decrypt(EncryptionManager.Encrypt("aabbcc ■☺"));
+            Console.WriteLine(EncryptionManager.Decrypt(File.ReadAllText("pwd.txt")));
         }
     }
 }

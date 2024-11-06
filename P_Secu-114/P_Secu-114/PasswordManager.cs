@@ -24,12 +24,21 @@ namespace P_Secu_114
 
         public static void AddEntry()
         {
+            string password = EncryptionManager.Encrypt(Console.ReadLine());
+            string username = Console.ReadLine();
+            string url = Console.ReadLine();
+
+            _passwordList.Add(new Entry(password, username, url));
+        }
+
+        public static void UpdateEntry()
+        {
 
         }
 
-        public static void RemoveEntry()
+        public static void RemoveEntry(Entry entry)
         {
-
+            _passwordList.Remove(entry);
         }
     }
 }
