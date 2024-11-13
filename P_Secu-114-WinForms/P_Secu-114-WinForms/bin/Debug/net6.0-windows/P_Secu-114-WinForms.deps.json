@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "P_Secu-114-WinForms/1.0.0": {
+        "runtime": {
+          "P_Secu-114-WinForms.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "P_Secu-114-WinForms/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

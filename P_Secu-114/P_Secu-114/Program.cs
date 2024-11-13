@@ -1,8 +1,8 @@
 ﻿namespace P_Secu_114
 {
-    internal class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             int choice = 0;
             /*Console.WriteLine("Enter MasterPassword");
@@ -11,7 +11,7 @@
 
             File.WriteAllText("pwd.txt", EncryptionManager.Encrypt(Console.ReadLine()));
             Console.WriteLine(EncryptionManager.Decrypt(File.ReadAllText("pwd.txt")));
-            */
+            
 
             do
             {
@@ -24,6 +24,17 @@
                 bool b = true;
                 Console.WriteLine("a");
             } while (true);
+        }*/
+
+        /// <summary>
+        /// Point d'entrée principal de l'application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MenuForm());
         }
     }
 }
