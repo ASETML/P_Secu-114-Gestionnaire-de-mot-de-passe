@@ -33,7 +33,6 @@ namespace P_Secu_114_WinForms
                 encryptedText += (char)characterValue;
 
                 i++;
-
             }
             return encryptedText;
         }
