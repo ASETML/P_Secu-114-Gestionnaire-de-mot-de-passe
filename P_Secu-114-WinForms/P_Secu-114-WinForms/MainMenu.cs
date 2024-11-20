@@ -18,9 +18,11 @@ namespace P_Secu_114_WinForms
             ShowEntryList();
 
             System.Windows.Forms.Timer reloadTimer = new System.Windows.Forms.Timer();
-            reloadTimer.Interval = 500;
+            reloadTimer.Interval = 2500;
             reloadTimer.Tick += ReloadTimer_Tick;
             reloadTimer.Start();
+
+            SaveFile.ReadEntries("a");
         }
 
         private void ReloadTimer_Tick(object? sender, EventArgs e)
@@ -41,7 +43,6 @@ namespace P_Secu_114_WinForms
 
         private void ShowEntryList()
         {
-
             foreach (Control control in this.Controls)
             {
                 if (control.GetType() == typeof(EntryButton))
@@ -57,6 +58,16 @@ namespace P_Secu_114_WinForms
                 this.Controls.Add(btn);
                 btn.Top = i;
                 i += 25;
+            }
+
+            if (pictureBox1.Visible)
+            {
+                pictureBox1.Hide();
+            }
+
+            if (label1.Visible)
+            {
+                label1.Hide();
             }
         }
 

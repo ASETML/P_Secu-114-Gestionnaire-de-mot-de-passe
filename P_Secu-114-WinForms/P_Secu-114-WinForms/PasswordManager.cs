@@ -16,6 +16,7 @@ namespace P_Secu_114_WinForms
         public static void AddEntry(string password, string username, string url)
         {
             PasswordList.Add(new Entry(EncryptionManager.Encrypt(password), EncryptionManager.Encrypt(username), EncryptionManager.Encrypt(url)));
+            SaveFile.SaveEntries("a");
         }
 
         public static void UpdateEntry(string fieldToModify, string newValue, Entry entry)
@@ -32,11 +33,13 @@ namespace P_Secu_114_WinForms
                     entry.Url = EncryptionManager.Encrypt(newValue);
                     break;
             }
+            SaveFile.SaveEntries("a");
         }
 
         public static void RemoveEntry(Entry entry)
         {
             PasswordList.Remove(entry);
+            SaveFile.SaveEntries("a");
         }
     }
 }

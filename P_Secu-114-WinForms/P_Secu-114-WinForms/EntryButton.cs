@@ -26,14 +26,6 @@ namespace P_Secu_114_WinForms
                 formToClose.Close();
             }
 
-            foreach (Control control in parentForm.Controls)
-            {
-                if (control.GetType() == typeof(EntryForm))
-                {
-                    parentForm.Controls.Remove(control);
-                    
-                }
-            }
             Form form = new EntryForm((Entry)this.Tag);
 
             form.MdiParent = parentForm;
@@ -41,8 +33,6 @@ namespace P_Secu_114_WinForms
             form.Left = 85;
             form.Top = 15;
             form.Name = this.Tag.ToString();
-
-            
         }
     }
 }
