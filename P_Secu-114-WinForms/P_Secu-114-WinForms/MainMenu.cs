@@ -13,7 +13,18 @@ namespace P_Secu_114_WinForms
 
         public MainMenu()
         {
+            this.IsMdiContainer = true;
             InitializeComponent();
+            ShowEntryList();
+
+            System.Windows.Forms.Timer reloadTimer = new System.Windows.Forms.Timer();
+            reloadTimer.Interval = 500;
+            reloadTimer.Tick += ReloadTimer_Tick;
+            reloadTimer.Start();
+        }
+
+        private void ReloadTimer_Tick(object? sender, EventArgs e)
+        {
             ShowEntryList();
         }
 
@@ -30,24 +41,28 @@ namespace P_Secu_114_WinForms
 
         private void ShowEntryList()
         {
-            int i = 0;
+
+            foreach (Control control in this.Controls)
+            {
+                if (control.GetType() == typeof(EntryButton))
+                {
+                    this.Controls.Remove(control);
+                }
+            }
+
+            int i = 15;
             foreach (Entry entry in PasswordManager.PasswordList)
             {
                 EntryButton btn = new EntryButton(entry);
                 this.Controls.Add(btn);
                 btn.Top = i;
                 i += 25;
-
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-        private void button_Click(object sender, EventArgs e)
-        {
-            new EntryForm((Entry)this.Tag).ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,6 +74,17 @@ namespace P_Secu_114_WinForms
         private void button5_Click(object sender, EventArgs e)
         {
             test();
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control.GetType() == typeof(MdiClient))
+                {
+                    control.BackColor = Color.White;
+                }
+            }
         }
     }
 }
