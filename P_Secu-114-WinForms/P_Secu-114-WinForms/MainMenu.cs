@@ -9,35 +9,42 @@ namespace P_Secu_114_WinForms
 {
     public partial class MainMenu : Form
     {
-        Entry testentry = new Entry(EncryptionManager.Encrypt("pwd"), "user", "localhost");
+        Entry testentry = new Entry("testEntry", EncryptionManager.Encrypt("pwd"), "user", "localhost");
+        System.Windows.Forms.Timer reloadTimer = new System.Windows.Forms.Timer();
 
         public MainMenu()
         {
             this.IsMdiContainer = true;
             InitializeComponent();
+            SaveFile.ReadEntries();
             ShowEntryList();
 
             System.Windows.Forms.Timer reloadTimer = new System.Windows.Forms.Timer();
-            reloadTimer.Interval = 2500;
+            reloadTimer.Interval = 500;
             reloadTimer.Tick += ReloadTimer_Tick;
             reloadTimer.Start();
-
-            SaveFile.ReadEntries("a");
         }
 
         private void ReloadTimer_Tick(object? sender, EventArgs e)
         {
             ShowEntryList();
+
+            int count = PasswordManager.PasswordList.Count();
+
+            if (count > 0)
+            {
+                reloadTimer.Interval = count * 150;
+            }
         }
 
         private void test()
         {
-            PasswordManager.AddEntry("pwd", "user", "localhost");
-            PasswordManager.AddEntry("dfgh", "fgh", "hdf");
-            PasswordManager.AddEntry("dhgf", "usdfgher", "locfdhgalhost");
-            PasswordManager.AddEntry("fdhfdh", "dffghh", "locadfghdfhlhost");
-            PasswordManager.AddEntry("fdgh", "dfh", "localhodfghdfhst");
-            PasswordManager.AddEntry("pdfghwd", "dfggh", "gfhfh");
+            PasswordManager.AddEntry("test1", "pwd", "user", "localhost");
+            PasswordManager.AddEntry("test2", "dfgh", "fgh", "hdf");
+            PasswordManager.AddEntry("test3", "dhgf", "usdfgher", "locfdhgalhost");
+            PasswordManager.AddEntry("test4", "fdhfdh", "dffghh", "locadfghdfhlhost");
+            PasswordManager.AddEntry("test5", "fdgh", "dfh", "localhodfghdfhst");
+            PasswordManager.AddEntry("test6", "pdfghwd", "dfggh", "gfhfh");
             ShowEntryList();
         }
 
@@ -78,8 +85,12 @@ namespace P_Secu_114_WinForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PasswordManager.AddEntry(textBox3.Text, textBox2.Text, textBox1.Text);
+            PasswordManager.AddEntry(textBox1.Text, textBox4.Text, textBox3.Text, textBox2.Text);
             ShowEntryList();
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -96,6 +107,21 @@ namespace P_Secu_114_WinForms
                     control.BackColor = Color.White;
                 }
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            textBox4.UseSystemPasswordChar = false;
+        }
+
+        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBox4.UseSystemPasswordChar = true;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace P_Secu_114_WinForms
     {
         public EntryButton(Entry entry) : base()
         {
-            Text = EncryptionManager.Decrypt(entry.Url);
+            Text = EncryptionManager.Decrypt(entry.Title);
             Tag = entry;
             Click += new EventHandler(this.button_Click);
         }

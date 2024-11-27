@@ -17,16 +17,18 @@ namespace P_Secu_114_WinForms
 {
     public static class SaveFile
     {
-        public static void SaveEntries(string path)
+        const string savePath = "a";
+
+        public static void SaveEntries()
         {
-            File.WriteAllText(path, JsonSerializer.Serialize(PasswordManager.PasswordList));
+            File.WriteAllText(savePath, JsonSerializer.Serialize(PasswordManager.PasswordList));
         }
 
-        public static void ReadEntries(string path)
+        public static void ReadEntries()
         {
             try
             {
-                PasswordManager.PasswordList = JsonSerializer.Deserialize<List<Entry>>(File.ReadAllText(path));
+                PasswordManager.PasswordList = JsonSerializer.Deserialize<List<Entry>>(File.ReadAllText(savePath));
             }
             catch (Exception ex)
             {

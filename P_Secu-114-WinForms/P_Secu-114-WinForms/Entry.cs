@@ -12,12 +12,14 @@ namespace P_Secu_114_WinForms
     /// </summary>
     public class Entry
     {
+        public string Title { get; set; }
         public string Password { get; set; }
         public string Username { get; set; }
         public string Url { get; set; }
 
-        public Entry(string password, string username, string url)
+        public Entry(string title, string password, string username, string url)
         {
+            Title = title;
             Password = password;
             Username = username;
             Url = url;
