@@ -16,8 +16,6 @@ namespace P_Secu_114_WinForms
         {
             this.IsMdiContainer = true;
             InitializeComponent();
-            SaveFile.ReadEntries();
-            ShowEntryList();
 
             System.Windows.Forms.Timer reloadTimer = new System.Windows.Forms.Timer();
             reloadTimer.Interval = 500;
@@ -67,15 +65,8 @@ namespace P_Secu_114_WinForms
                 i += 25;
             }
 
-            if (pictureBox1.Visible)
-            {
-                pictureBox1.Hide();
-            }
-
-            if (label1.Visible)
-            {
-                label1.Hide();
-            }
+            pictureBox1.Hide();
+            label1.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -109,11 +100,6 @@ namespace P_Secu_114_WinForms
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
         {
             textBox4.UseSystemPasswordChar = false;
@@ -122,6 +108,25 @@ namespace P_Secu_114_WinForms
         private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
         {
             textBox4.UseSystemPasswordChar = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveFile.ReadEntries(textBox5.Text);
+            ShowEntryList();
+            textBox5.Hide();
+            button2.Hide();
+            pictureBox3.Hide();
+        }
+
+        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
+        {
+            textBox5.UseSystemPasswordChar = false;
+        }
+
+        private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBox5.UseSystemPasswordChar = true;
         }
     }
 }
