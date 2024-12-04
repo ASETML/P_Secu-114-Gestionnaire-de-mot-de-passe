@@ -35,6 +35,7 @@ namespace P_Secu_114_WinForms
             label2.Text = Helpers.HidePassword(_userName.Length);
             label3.Text = Helpers.HidePassword(_password.Length);
 
+            label1.Text = _url;
             label7.Text = _title;
         }
 
@@ -62,6 +63,60 @@ namespace P_Secu_114_WinForms
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pictureBox4_MouseDown(object sender, MouseEventArgs e)
+        {
+            label2.Text = _userName;
+            pictureBox4.Image = Properties.Resources.eye_regular;
+        }
+
+        private void pictureBox4_MouseUp(object sender, MouseEventArgs e)
+        {
+            label2.Text = Helpers.HidePassword(_userName.Length);
+            pictureBox4.Image = Properties.Resources.eye_solid;
+        }
+
+        private void pictureBox5_MouseDown(object sender, MouseEventArgs e)
+        {
+            label3.Text = _password;
+            pictureBox5.Image = Properties.Resources.eye_regular;
+        }
+
+        private void pictureBox5_MouseUp(object sender, MouseEventArgs e)
+        {
+            label3.Text = Helpers.HidePassword(_password.Length);
+            pictureBox5.Image = Properties.Resources.eye_solid;
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.copy_regular;
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.copy_solid;
+        }
+
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBox2.Image = Properties.Resources.copy_regular;
+        }
+
+        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
+        {
+            pictureBox2.Image = Properties.Resources.copy_solid;
+        }
+
+        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBox3.Image = Properties.Resources.copy_regular;
+        }
+
+        private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
+        {
+            pictureBox3.Image = Properties.Resources.copy_solid;
         }
     }
 }

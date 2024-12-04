@@ -103,11 +103,13 @@ namespace P_Secu_114_WinForms
         private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
         {
             textBox4.UseSystemPasswordChar = false;
+            pictureBox2.Image = Properties.Resources.eye_regular;
         }
 
         private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
         {
             textBox4.UseSystemPasswordChar = true;
+            pictureBox2.Image = Properties.Resources.eye_solid;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -122,11 +124,13 @@ namespace P_Secu_114_WinForms
         private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
         {
             textBox5.UseSystemPasswordChar = false;
+            pictureBox3.Image = Properties.Resources.eye_regular;
         }
 
         private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
         {
             textBox5.UseSystemPasswordChar = true;
+            pictureBox3.Image = Properties.Resources.eye_solid;
         }
     }
 }

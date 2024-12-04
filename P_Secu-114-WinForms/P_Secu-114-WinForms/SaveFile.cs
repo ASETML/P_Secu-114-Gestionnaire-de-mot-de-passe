@@ -43,10 +43,13 @@ namespace P_Secu_114_WinForms
                 string decryptedFileContent = EncryptionManager.Decrypt(fileContent);
 
                 List<string> passwordList = JsonSerializer.Deserialize<List<string>>(decryptedFileContent);
-
                 MasterPassword.Key = inputMasterPassword;
 
-                if (EncryptionManager.Encrypt(inputMasterPassword) != passwordList[0])
+                if (inputMasterPassword == "")
+                {
+                    Application.Restart();
+                }
+                else if (EncryptionManager.Encrypt(inputMasterPassword) != passwordList[0])
                 {
                     Random random = new Random();
                     sleep = (int)Math.Round(random.NextDouble() * (random.NextDouble() * 5000) + 250);
@@ -64,9 +67,8 @@ namespace P_Secu_114_WinForms
                     string message = "Vous vous êtes trompés de mot de passe : l'application va s'éteindre";
                     string caption = "Erreur dans le mot de passe";
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
-
-                    // Displays the MessageBox.
                     MessageBox.Show(message, caption, buttons);
+
                     Application.Exit();
                 }
             }

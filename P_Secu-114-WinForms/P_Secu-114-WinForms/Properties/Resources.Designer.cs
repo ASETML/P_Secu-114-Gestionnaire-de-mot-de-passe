@@ -63,9 +63,29 @@ namespace P_Secu_114_WinForms.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap copy_regular {
+            get {
+                object obj = ResourceManager.GetObject("copy_regular", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap copy_solid {
             get {
                 object obj = ResourceManager.GetObject("copy-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eye_regular {
+            get {
+                object obj = ResourceManager.GetObject("eye_regular", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
