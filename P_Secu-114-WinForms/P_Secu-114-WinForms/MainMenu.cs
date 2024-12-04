@@ -9,7 +9,6 @@ namespace P_Secu_114_WinForms
 {
     public partial class MainMenu : Form
     {
-        Entry testentry = new Entry("testEntry", EncryptionManager.Encrypt("pwd"), "user", "localhost");
         System.Windows.Forms.Timer reloadTimer = new System.Windows.Forms.Timer();
 
         public MainMenu()
