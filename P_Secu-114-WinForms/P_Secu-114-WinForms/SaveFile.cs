@@ -61,7 +61,12 @@ namespace P_Secu_114_WinForms
             {
                 if (ex.GetType() == typeof(WrongPasswordException))
                 {
-                    MessageBox.Show("Vous vous êtes trompés de mot de passe : l'application va s'eteindre \n " + sleep);
+                    string message = "Vous vous êtes trompés de mot de passe : l'application va s'éteindre";
+                    string caption = "Erreur dans le mot de passe";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+                    // Displays the MessageBox.
+                    MessageBox.Show(message, caption, buttons);
                     Application.Exit();
                 }
             }
