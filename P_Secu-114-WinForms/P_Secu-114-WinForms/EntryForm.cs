@@ -12,6 +12,11 @@ namespace P_Secu_114_WinForms
 {
     public partial class EntryForm : Form
     {
+        string _title;
+        string _url;
+        string _userName;
+        string _password;
+
         private Entry _entry;
         public EntryForm(Entry entry)
         {
@@ -22,24 +27,30 @@ namespace P_Secu_114_WinForms
 
         public void WriteEntry()
         {
-            label1.Text = EncryptionManager.Decrypt(_entry.Url);
-            label2.Text = EncryptionManager.Decrypt(_entry.Username);
-            label3.Text = EncryptionManager.Decrypt(_entry.Password);
+            _title = EncryptionManager.Decrypt(_entry.Title);
+            _url = EncryptionManager.Decrypt(_entry.Url);
+            _userName = EncryptionManager.Decrypt(_entry.Username);
+            _password = EncryptionManager.Decrypt(_entry.Password);
+
+            label2.Text = Helpers.HidePassword(_userName.Length);
+            label3.Text = Helpers.HidePassword(_password.Length);
+
+            label7.Text = _title;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(label1.Text);
+            Clipboard.SetText(_url);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(label2.Text);
+            Clipboard.SetText(_userName);
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(label3.Text);
+            Clipboard.SetText(_password);
         }
 
         private void button1_Click(object sender, EventArgs e)

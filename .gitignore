@@ -1,2 +1,4 @@
 *.vsidx
 *.suo
+.vsidx
+.suo
