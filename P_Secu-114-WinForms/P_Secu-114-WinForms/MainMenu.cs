@@ -61,6 +61,7 @@ namespace P_Secu_114_WinForms
                 EntryButton btn = new EntryButton(entry);
                 this.Controls.Add(btn);
                 btn.Top = i;
+                btn.Left = 5;
                 i += 25;
             }
 

@@ -17,7 +17,7 @@ namespace P_Secu_114_WinForms
 {
     public static class SaveFile
     {
-        const string savePath = "a";
+        const string savePath = "saveFile.txt";
 
         public static void SaveEntries()
         {
@@ -37,39 +37,51 @@ namespace P_Secu_114_WinForms
         public static void ReadEntries(string inputMasterPassword)
         {
             int sleep = 1;
-            try
+            string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            if (inputMasterPassword == "")
             {
-                string fileContent = File.ReadAllText(savePath);
-                string decryptedFileContent = EncryptionManager.Decrypt(fileContent);
-
-                List<string> passwordList = JsonSerializer.Deserialize<List<string>>(decryptedFileContent);
-                MasterPassword.Key = inputMasterPassword;
-
-                if (inputMasterPassword == "")
-                {
-                    Application.Restart();
-                }
-                else if (EncryptionManager.Encrypt(inputMasterPassword) != passwordList[0])
-                {
-                    Random random = new Random();
-                    sleep = (int)Math.Round(random.NextDouble() * (random.NextDouble() * 5000) + 250);
-                    Thread.Sleep(sleep);
-                    throw new WrongPasswordException("Le mot de passe n'est pas correct !");
-                }
-
-                string encryptedPassword = EncryptionManager.Decrypt(passwordList[1]);
-                PasswordManager.PasswordList = JsonSerializer.Deserialize<List<Entry>>(encryptedPassword);
+                Application.Restart();
             }
-            catch (Exception ex)
+            else if (!File.Exists(Path.Combine(path, savePath)))
             {
-                if (ex.GetType() == typeof(WrongPasswordException))
+                File.Create(Path.Combine(path, savePath)).Close();
+                MasterPassword.Key = inputMasterPassword;
+                SaveEntries();
+            }
+            else
+            {
+                try
                 {
-                    string message = "Vous vous êtes trompés de mot de passe : l'application va s'éteindre";
-                    string caption = "Erreur dans le mot de passe";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    MessageBox.Show(message, caption, buttons);
+                    string fileContent = File.ReadAllText(savePath);
+                    string decryptedFileContent = EncryptionManager.Decrypt(fileContent);
 
-                    Application.Exit();
+                    List<string> passwordList = JsonSerializer.Deserialize<List<string>>(decryptedFileContent);
+                    MasterPassword.Key = inputMasterPassword;
+
+                    
+                    if (EncryptionManager.Encrypt(inputMasterPassword) != passwordList[0])
+                    {
+                        Random random = new Random();
+                        sleep = (int)Math.Round(random.NextDouble() * (random.NextDouble() * 5000) + 250);
+                        Thread.Sleep(sleep);
+                        throw new WrongPasswordException("Le mot de passe n'est pas correct !");
+                    }
+
+                    string encryptedPassword = EncryptionManager.Decrypt(passwordList[1]);
+                    PasswordManager.PasswordList = JsonSerializer.Deserialize<List<Entry>>(encryptedPassword);
+                }
+                catch (Exception ex)
+                {
+                    if (ex.GetType() == typeof(WrongPasswordException))
+                    {
+                        string message = "Vous vous êtes trompés de mot de passe : l'application va s'éteindre";
+                        string caption = "Erreur dans le mot de passe";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show(message, caption, buttons);
+
+                        Application.Exit();
+                    }
                 }
             }
         }

@@ -1,0 +1,15 @@
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114\ConvertisseurBinaire\ConvertisseurBinaire\bin\Debug\net6.0\ConvertisseurBinaire.exe
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114\ConvertisseurBinaire\ConvertisseurBinaire\bin\Debug\net6.0\ConvertisseurBinaire.deps.json
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114\ConvertisseurBinaire\ConvertisseurBinaire\bin\Debug\net6.0\ConvertisseurBinaire.runtimeconfig.json
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114\ConvertisseurBinaire\ConvertisseurBinaire\bin\Debug\net6.0\ConvertisseurBinaire.dll
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114\ConvertisseurBinaire\ConvertisseurBinaire\bin\Debug\net6.0\ConvertisseurBinaire.pdb
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114\ConvertisseurBinaire\ConvertisseurBinaire\obj\Debug\net6.0\ConvertisseurBinaire.csproj.AssemblyReference.cache
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114\ConvertisseurBinaire\ConvertisseurBinaire\obj\Debug\net6.0\ConvertisseurBinaire.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114\ConvertisseurBinaire\ConvertisseurBinaire\obj\Debug\net6.0\ConvertisseurBinaire.AssemblyInfoInputs.cache
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114\ConvertisseurBinaire\ConvertisseurBinaire\obj\Debug\net6.0\ConvertisseurBinaire.AssemblyInfo.cs
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114\ConvertisseurBinaire\ConvertisseurBinaire\obj\Debug\net6.0\ConvertisseurBinaire.csproj.CoreCompileInputs.cache
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114\ConvertisseurBinaire\ConvertisseurBinaire\obj\Debug\net6.0\ConvertisseurBinaire.dll
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114\ConvertisseurBinaire\ConvertisseurBinaire\obj\Debug\net6.0\refint\ConvertisseurBinaire.dll
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114\ConvertisseurBinaire\ConvertisseurBinaire\obj\Debug\net6.0\ConvertisseurBinaire.pdb
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114\ConvertisseurBinaire\ConvertisseurBinaire\obj\Debug\net6.0\ConvertisseurBinaire.genruntimeconfig.cache
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114\ConvertisseurBinaire\ConvertisseurBinaire\obj\Debug\net6.0\ref\ConvertisseurBinaire.dll
