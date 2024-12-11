@@ -18,8 +18,9 @@ namespace P_Secu_114_WinForms
         public void button_Click(object sender, EventArgs e)
         {
             Form parentForm = this.FindForm();
+            Form parentParentForm = parentForm.ParentForm;
 
-            Form formToClose = parentForm.ActiveMdiChild;
+            Form formToClose = parentParentForm.ActiveMdiChild;
 
             if (formToClose != null)
             {
@@ -28,7 +29,7 @@ namespace P_Secu_114_WinForms
 
             Form form = new EntryForm((Entry)this.Tag);
 
-            form.MdiParent = parentForm;
+            form.MdiParent = parentParentForm;
             form.Show();
             form.Left = 85;
             form.Top = 15;

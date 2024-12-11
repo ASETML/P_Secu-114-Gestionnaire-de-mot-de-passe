@@ -10,6 +10,7 @@ namespace P_Secu_114_WinForms
     public partial class MainMenu : Form
     {
         System.Windows.Forms.Timer reloadTimer = new System.Windows.Forms.Timer();
+        public Navigation NavForm { get; set; }
 
         public MainMenu()
         {
@@ -20,11 +21,14 @@ namespace P_Secu_114_WinForms
             reloadTimer.Interval = 500;
             reloadTimer.Tick += ReloadTimer_Tick;
             reloadTimer.Start();
+            NavForm = new Navigation(this);
         }
 
         private void ReloadTimer_Tick(object? sender, EventArgs e)
         {
-            ShowEntryList();
+            NavForm.ShowEntryList();
+            pictureBox1.Hide();
+            label1.Hide();
 
             int count = PasswordManager.PasswordList.Count();
 
@@ -42,11 +46,13 @@ namespace P_Secu_114_WinForms
             PasswordManager.AddEntry("test4", "fdhfdh", "dffghh", "locadfghdfhlhost");
             PasswordManager.AddEntry("test5", "fdgh", "dfh", "localhodfghdfhst");
             PasswordManager.AddEntry("test6", "pdfghwd", "dfggh", "gfhfh");
-            ShowEntryList();
+            NavForm.ShowEntryList();
         }
 
-        private void ShowEntryList()
+       /* private void ShowEntryList()
         {
+            
+
             foreach (Control control in this.Controls)
             {
                 if (control.GetType() == typeof(EntryButton))
@@ -67,7 +73,7 @@ namespace P_Secu_114_WinForms
 
             pictureBox1.Hide();
             label1.Hide();
-        }
+        }*/
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -77,7 +83,7 @@ namespace P_Secu_114_WinForms
         private void button1_Click(object sender, EventArgs e)
         {
             PasswordManager.AddEntry(textBox1.Text, textBox4.Text, textBox3.Text, textBox2.Text);
-            ShowEntryList();
+            NavForm.ShowEntryList();
             textBox1.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
@@ -115,7 +121,7 @@ namespace P_Secu_114_WinForms
         private void button2_Click(object sender, EventArgs e)
         {
             SaveFile.ReadEntries(textBox5.Text);
-            ShowEntryList();
+            NavForm.ShowEntryList();
             textBox5.Hide();
             button2.Hide();
             pictureBox3.Hide();

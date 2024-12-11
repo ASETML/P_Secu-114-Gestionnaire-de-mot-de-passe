@@ -57,11 +57,20 @@ namespace P_Secu_114_WinForms
         private void button1_Click(object sender, EventArgs e)
         {
             PasswordManager.RemoveEntry(_entry);
+
+            Navigation form = new Navigation((MainMenu)this.ParentForm);
+            MainMenu parentForm = (MainMenu)this.ParentForm;
+            parentForm.NavForm = form;
+            form.Show();
             this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Navigation form = new Navigation((MainMenu)this.ParentForm);
+            MainMenu parentForm = (MainMenu)this.ParentForm;
+            parentForm.NavForm = form;
+            form.Show();
             this.Close();
         }
 

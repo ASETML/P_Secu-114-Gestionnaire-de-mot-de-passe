@@ -17,3 +17,4 @@ C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_
 C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114-WinForms\P_Secu-114-WinForms\obj\Debug\net6.0-windows\P_Secu_114_WinForms.EntryForm.resources
 C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114-WinForms\P_Secu-114-WinForms\obj\Debug\net6.0-windows\P_Secu_114_WinForms.MainMenu.resources
 C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114-WinForms\P_Secu-114-WinForms\obj\Debug\net6.0-windows\P_Secu_114_WinForms.Properties.Resources.resources
+C:\Users\albsegalen\Documents\GitHub\P_Secu-114-Gestionnaire-de-mot-de-passe-\P_Secu-114-WinForms\P_Secu-114-WinForms\obj\Debug\net6.0-windows\P_Secu_114_WinForms.Navigation.resources
