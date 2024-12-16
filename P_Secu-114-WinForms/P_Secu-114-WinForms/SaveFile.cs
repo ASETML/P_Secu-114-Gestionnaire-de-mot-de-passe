@@ -47,19 +47,20 @@ namespace P_Secu_114_WinForms
             {
                 File.Create(Path.Combine(path, savePath)).Close();
                 MasterPassword.Key = inputMasterPassword;
+                MessageBox.Show(MasterPassword.Key);
                 SaveEntries();
             }
             else
             {
                 try
                 {
+                    MasterPassword.Key = inputMasterPassword;
                     string fileContent = File.ReadAllText(savePath);
                     string decryptedFileContent = EncryptionManager.Decrypt(fileContent);
 
                     List<string> passwordList = JsonSerializer.Deserialize<List<string>>(decryptedFileContent);
-                    MasterPassword.Key = inputMasterPassword;
-
                     
+
                     if (EncryptionManager.Encrypt(inputMasterPassword) != passwordList[0])
                     {
                         Random random = new Random();

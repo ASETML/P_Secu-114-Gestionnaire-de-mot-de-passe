@@ -16,64 +16,40 @@ namespace P_Secu_114_WinForms
         {
             this.IsMdiContainer = true;
             InitializeComponent();
-
-            System.Windows.Forms.Timer reloadTimer = new System.Windows.Forms.Timer();
-            reloadTimer.Interval = 500;
-            reloadTimer.Tick += ReloadTimer_Tick;
-            reloadTimer.Start();
             NavForm = new Navigation(this);
-        }
-
-        private void ReloadTimer_Tick(object? sender, EventArgs e)
-        {
             NavForm.ShowEntryList();
             pictureBox1.Hide();
             label1.Hide();
 
-            int count = PasswordManager.PasswordList.Count();
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
+            label5.Hide();
 
-            if (count > 0)
-            {
-                reloadTimer.Interval = count * 150;
-            }
+            textBox1.Hide();
+            textBox2.Hide();
+            textBox3.Hide();
+            textBox4.Hide();
+
+            pictureBox2.Hide();
+            button1.Hide();
         }
 
-        private void test()
+        private void ShowAddPassword()
         {
-            PasswordManager.AddEntry("test1", "pwd", "user", "localhost");
-            PasswordManager.AddEntry("test2", "dfgh", "fgh", "hdf");
-            PasswordManager.AddEntry("test3", "dhgf", "usdfgher", "locfdhgalhost");
-            PasswordManager.AddEntry("test4", "fdhfdh", "dffghh", "locadfghdfhlhost");
-            PasswordManager.AddEntry("test5", "fdgh", "dfh", "localhodfghdfhst");
-            PasswordManager.AddEntry("test6", "pdfghwd", "dfggh", "gfhfh");
-            NavForm.ShowEntryList();
+            label2.Show();
+            label3.Show();
+            label4.Show();
+            label5.Show();
+
+            textBox1.Show();
+            textBox2.Show();
+            textBox3.Show();
+            textBox4.Show();
+
+            pictureBox2.Show();
+            button1.Show();
         }
-
-       /* private void ShowEntryList()
-        {
-            
-
-            foreach (Control control in this.Controls)
-            {
-                if (control.GetType() == typeof(EntryButton))
-                {
-                    this.Controls.Remove(control);
-                }
-            }
-
-            int i = 15;
-            foreach (Entry entry in PasswordManager.PasswordList)
-            {
-                EntryButton btn = new EntryButton(entry);
-                this.Controls.Add(btn);
-                btn.Top = i;
-                btn.Left = 5;
-                i += 25;
-            }
-
-            pictureBox1.Hide();
-            label1.Hide();
-        }*/
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -82,17 +58,15 @@ namespace P_Secu_114_WinForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PasswordManager.AddEntry(textBox1.Text, textBox4.Text, textBox3.Text, textBox2.Text);
-            NavForm.ShowEntryList();
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            test();
+            if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0 && textBox3.Text.Length > 0 && textBox4.Text.Length > 0)
+            {
+                PasswordManager.AddEntry(textBox1.Text, textBox4.Text, textBox3.Text, textBox2.Text);
+                NavForm.ShowEntryList();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+            }
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
@@ -125,6 +99,8 @@ namespace P_Secu_114_WinForms
             textBox5.Hide();
             button2.Hide();
             pictureBox3.Hide();
+
+            ShowAddPassword();
         }
 
         private void pictureBox3_MouseDown(object sender, MouseEventArgs e)

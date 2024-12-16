@@ -13,6 +13,7 @@ namespace P_Secu_114_WinForms
             Text = EncryptionManager.Decrypt(entry.Title);
             Tag = entry;
             Click += new EventHandler(this.button_Click);
+            this.Width = 150;
         }
 
         public void button_Click(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace P_Secu_114_WinForms
 
             form.MdiParent = parentParentForm;
             form.Show();
-            form.Left = 85;
+            form.Left = 15;
             form.Top = 15;
             form.Name = this.Tag.ToString();
         }

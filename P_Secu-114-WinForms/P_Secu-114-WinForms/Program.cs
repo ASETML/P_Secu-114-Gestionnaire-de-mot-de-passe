@@ -12,7 +12,6 @@ namespace P_Secu_114_WinForms
         [STAThread]
         static void Main()
         {
-            MasterPassword.Key = "viveletml";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainMenu());

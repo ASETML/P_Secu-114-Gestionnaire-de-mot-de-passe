@@ -62,6 +62,7 @@ namespace P_Secu_114_WinForms
             MainMenu parentForm = (MainMenu)this.ParentForm;
             parentForm.NavForm = form;
             form.Show();
+            form.ShowEntryList();
             this.Close();
         }
 
@@ -71,6 +72,7 @@ namespace P_Secu_114_WinForms
             MainMenu parentForm = (MainMenu)this.ParentForm;
             parentForm.NavForm = form;
             form.Show();
+            form.ShowEntryList();
             this.Close();
         }
 

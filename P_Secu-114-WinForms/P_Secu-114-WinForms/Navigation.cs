@@ -34,12 +34,18 @@ namespace P_Secu_114_WinForms
             }
 
             int i = 15;
+            int y = 5;
             foreach (Entry entry in PasswordManager.PasswordList)
             {
+                if (i > this.Height)
+                {
+                    y += 150;
+                    i = 15;
+                }
                 EntryButton btn = new EntryButton(entry);
                 this.Controls.Add(btn);
                 btn.Top = i;
-                btn.Left = 5;
+                btn.Left = y;
                 i += 25;
             }
         }
