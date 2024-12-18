@@ -10,6 +10,9 @@ using P_Secu_114_WinForms;
 
 namespace P_Secu_114_WinForms
 {
+    /// <summary>
+    /// Le menu d'affichage des entrées
+    /// </summary>
     public partial class EntryForm : Form
     {
         string _title;
@@ -32,11 +35,16 @@ namespace P_Secu_114_WinForms
             _userName = EncryptionManager.Decrypt(_entry.Username);
             _password = EncryptionManager.Decrypt(_entry.Password);
 
-            label2.Text = Helpers.HidePassword(_userName.Length);
-            label3.Text = Helpers.HidePassword(_password.Length);
+            textBox4.Text = _userName;
+            textBox3.Text = _password;
 
-            label1.Text = _url;
-            label7.Text = _title;
+            textBox2.Text = _url;
+            textBox1.Text = _title;
+
+            textBox1.Width = 450;
+            textBox2.Width = 450;
+            textBox3.Width = 450;
+            textBox4.Width = 450;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -61,6 +69,19 @@ namespace P_Secu_114_WinForms
             Navigation form = new Navigation((MainMenu)this.ParentForm);
             MainMenu parentForm = (MainMenu)this.ParentForm;
             parentForm.NavForm = form;
+
+            foreach (Control c in parentForm.Controls)
+            {
+                if (c.Text == "Titre" || c.Text == "URL" || c.Text == "Nom d'utilisateur" || c.Text == "Mot de passe" || c.Text == "Ajouter un mot de passe")
+                {
+                    c.Show();
+                }
+                if (c.GetType() == typeof(TextBox) || c.GetType() == typeof(PictureBox))
+                {
+                    c.Show();
+                }
+            }
+
             form.Show();
             form.ShowEntryList();
             this.Close();
@@ -71,6 +92,19 @@ namespace P_Secu_114_WinForms
             Navigation form = new Navigation((MainMenu)this.ParentForm);
             MainMenu parentForm = (MainMenu)this.ParentForm;
             parentForm.NavForm = form;
+
+            foreach (Control c in parentForm.Controls)
+            {
+                if (c.Text == "Titre" || c.Text == "URL" || c.Text == "Nom d'utilisateur" || c.Text == "Mot de passe" || c.Text == "Ajouter un mot de passe")
+                {
+                    c.Show();
+                }
+                if (c.GetType() == typeof(TextBox) || c.GetType() == typeof(PictureBox))
+                {
+                    c.Show();
+                }
+            }
+
             form.Show();
             form.ShowEntryList();
             this.Close();
@@ -78,25 +112,25 @@ namespace P_Secu_114_WinForms
 
         private void pictureBox4_MouseDown(object sender, MouseEventArgs e)
         {
-            label2.Text = _userName;
+            textBox3.UseSystemPasswordChar = false;
             pictureBox4.Image = Properties.Resources.eye_regular;
         }
 
         private void pictureBox4_MouseUp(object sender, MouseEventArgs e)
         {
-            label2.Text = Helpers.HidePassword(_userName.Length);
+            textBox3.UseSystemPasswordChar = true;
             pictureBox4.Image = Properties.Resources.eye_solid;
         }
 
         private void pictureBox5_MouseDown(object sender, MouseEventArgs e)
         {
-            label3.Text = _password;
+            textBox4.UseSystemPasswordChar = false;
             pictureBox5.Image = Properties.Resources.eye_regular;
         }
 
         private void pictureBox5_MouseUp(object sender, MouseEventArgs e)
         {
-            label3.Text = Helpers.HidePassword(_password.Length);
+            textBox4.UseSystemPasswordChar = true;
             pictureBox5.Image = Properties.Resources.eye_solid;
         }
 
@@ -128,6 +162,30 @@ namespace P_Secu_114_WinForms
         private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
         {
             pictureBox3.Image = Properties.Resources.copy_solid;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            _entry.Title = EncryptionManager.Encrypt(textBox1.Text);
+            SaveFile.SaveEntries();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            _entry.Url = EncryptionManager.Encrypt(textBox2.Text);
+            SaveFile.SaveEntries();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            _entry.Username = EncryptionManager.Encrypt(textBox4.Text);
+            SaveFile.SaveEntries();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            _entry.Password = EncryptionManager.Encrypt(textBox3.Text);
+            SaveFile.SaveEntries();
         }
     }
 }

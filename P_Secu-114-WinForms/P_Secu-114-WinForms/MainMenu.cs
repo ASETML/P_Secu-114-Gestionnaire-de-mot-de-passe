@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace P_Secu_114_WinForms
 {
+    /// <summary>
+    /// Le menu principal
+    /// </summary>
     public partial class MainMenu : Form
     {
         System.Windows.Forms.Timer reloadTimer = new System.Windows.Forms.Timer();
@@ -18,9 +21,8 @@ namespace P_Secu_114_WinForms
             InitializeComponent();
             NavForm = new Navigation(this);
             NavForm.ShowEntryList();
-            pictureBox1.Hide();
-            label1.Hide();
 
+            label1.Hide();
             label2.Hide();
             label3.Hide();
             label4.Hide();
@@ -33,6 +35,8 @@ namespace P_Secu_114_WinForms
 
             pictureBox2.Hide();
             button1.Hide();
+            this.Controls.Remove(pictureBox1);
+            pictureBox1.Hide();
         }
 
         private void ShowAddPassword()
@@ -99,6 +103,9 @@ namespace P_Secu_114_WinForms
             textBox5.Hide();
             button2.Hide();
             pictureBox3.Hide();
+            this.Controls.Remove(textBox5);
+            this.Controls.Remove(button2);
+            this.Controls.Remove(pictureBox3);
 
             ShowAddPassword();
         }
@@ -113,6 +120,11 @@ namespace P_Secu_114_WinForms
         {
             textBox5.UseSystemPasswordChar = true;
             pictureBox3.Image = Properties.Resources.eye_solid;
+        }
+
+        private void MainMenu_Shown(object sender, EventArgs e)
+        {
+            textBox5.Focus();
         }
     }
 }

@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace P_Secu_114_WinForms
 {
+    /// <summary>
+    /// Le menu qui affiche la liste des mdps
+    /// </summary>
     public partial class Navigation : Form
     {
         private Form _parentForm;

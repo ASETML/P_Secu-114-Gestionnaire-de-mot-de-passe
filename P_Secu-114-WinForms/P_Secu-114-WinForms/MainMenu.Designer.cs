@@ -29,206 +29,209 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
-            button1 = new Button();
-            button4 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            pictureBox2 = new PictureBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            button2 = new Button();
-            pictureBox3 = new PictureBox();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            SuspendLayout();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(576, 415);
-            button1.Name = "button1";
-            button1.Size = new Size(212, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Ajouter un mot de passe";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            this.button1.Location = new System.Drawing.Point(576, 415);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(212, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Ajouter un mot de passe";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 
-            button4.Location = new Point(12, 415);
-            button4.Name = "button4";
-            button4.Size = new Size(212, 23);
-            button4.TabIndex = 4;
-            button4.Text = "Quitter l'application";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            this.button4.Location = new System.Drawing.Point(12, 415);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(212, 23);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Quitter l\'application";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(576, 254);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(212, 23);
-            textBox1.TabIndex = 7;
+            this.textBox1.Location = new System.Drawing.Point(576, 254);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(212, 23);
+            this.textBox1.TabIndex = 7;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(576, 298);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(212, 23);
-            textBox2.TabIndex = 8;
+            this.textBox2.Location = new System.Drawing.Point(576, 298);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(212, 23);
+            this.textBox2.TabIndex = 8;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(576, 342);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(212, 23);
-            textBox3.TabIndex = 9;
+            this.textBox3.Location = new System.Drawing.Point(576, 342);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(212, 23);
+            this.textBox3.TabIndex = 9;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.loader;
-            pictureBox1.Location = new Point(357, 159);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(64, 64);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox1.TabIndex = 11;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Image = global::P_Secu_114_WinForms.Properties.Resources.loader;
+            this.pictureBox1.Location = new System.Drawing.Point(357, 159);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(316, 226);
-            label1.Name = "label1";
-            label1.Size = new Size(149, 15);
-            label1.TabIndex = 13;
-            label1.Text = "Démarrage de l'application";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(316, 226);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 15);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Démarrage de l\'application";
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.eye_solid;
-            pictureBox2.Location = new Point(540, 386);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(30, 23);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 15;
-            pictureBox2.TabStop = false;
-            pictureBox2.MouseDown += pictureBox2_MouseDown;
-            pictureBox2.MouseUp += pictureBox2_MouseUp;
+            this.pictureBox2.Image = global::P_Secu_114_WinForms.Properties.Resources.eye_solid;
+            this.pictureBox2.Location = new System.Drawing.Point(540, 386);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 23);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
+            this.pictureBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseUp);
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(576, 386);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(212, 23);
-            textBox4.TabIndex = 17;
-            textBox4.UseSystemPasswordChar = true;
+            this.textBox4.AcceptsReturn = true;
+            this.textBox4.AcceptsTab = true;
+            this.textBox4.Location = new System.Drawing.Point(576, 386);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(212, 23);
+            this.textBox4.TabIndex = 17;
+            this.textBox4.UseSystemPasswordChar = true;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(316, 261);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(149, 23);
-            textBox5.TabIndex = 19;
-            textBox5.UseSystemPasswordChar = true;
+            this.textBox5.Location = new System.Drawing.Point(316, 261);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(149, 23);
+            this.textBox5.TabIndex = 19;
+            this.textBox5.UseSystemPasswordChar = true;
             // 
             // button2
             // 
-            button2.Location = new Point(316, 290);
-            button2.Name = "button2";
-            button2.Size = new Size(149, 61);
-            button2.TabIndex = 21;
-            button2.Text = "Se connecter";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            this.button2.Location = new System.Drawing.Point(316, 290);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(149, 61);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "Se connecter";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.eye_solid;
-            pictureBox3.Location = new Point(280, 261);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(30, 23);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 23;
-            pictureBox3.TabStop = false;
-            pictureBox3.MouseDown += pictureBox3_MouseDown;
-            pictureBox3.MouseUp += pictureBox3_MouseUp;
+            this.pictureBox3.Image = global::P_Secu_114_WinForms.Properties.Resources.eye_solid;
+            this.pictureBox3.Location = new System.Drawing.Point(280, 261);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(30, 23);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 23;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseDown);
+            this.pictureBox3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseUp);
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(576, 236);
-            label2.Name = "label2";
-            label2.Size = new Size(30, 15);
-            label2.TabIndex = 25;
-            label2.Text = "Titre";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(576, 236);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 15);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Titre";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(576, 280);
-            label3.Name = "label3";
-            label3.Size = new Size(28, 15);
-            label3.TabIndex = 26;
-            label3.Text = "URL";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(576, 280);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 15);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "URL";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(576, 324);
-            label4.Name = "label4";
-            label4.Size = new Size(99, 15);
-            label4.TabIndex = 27;
-            label4.Text = "Nom d'utilisateur";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(576, 324);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 15);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Nom d\'utilisateur";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(576, 368);
-            label5.Name = "label5";
-            label5.Size = new Size(77, 15);
-            label5.TabIndex = 28;
-            label5.Text = "Mot de passe";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(576, 368);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 15);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Mot de passe";
             // 
             // MainMenu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(819, 461);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(pictureBox3);
-            Controls.Add(button2);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(pictureBox2);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(button4);
-            Controls.Add(button1);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            IsMdiContainer = true;
-            Name = "MainMenu";
-            StartPosition = FormStartPosition.CenterParent;
-            Text = "Form1";
-            Load += MainMenu_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(819, 461);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
+            this.Name = "MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Form1";
+            this.Shown += new System.EventHandler(this.MainMenu_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

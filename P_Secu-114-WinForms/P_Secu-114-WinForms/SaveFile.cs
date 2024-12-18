@@ -15,9 +15,12 @@ using System.Runtime.CompilerServices;
 
 namespace P_Secu_114_WinForms
 {
+    /// <summary>
+    /// Sauvegarder et récupérer les données du fichier de sauvegarde
+    /// </summary>
     public static class SaveFile
     {
-        const string savePath = "saveFile.txt";
+        const string savePath = "saveFile.json";
 
         public static void SaveEntries()
         {
@@ -29,9 +32,8 @@ namespace P_Secu_114_WinForms
             passwordList.Add(encryptedPasswordListJson);
 
             string passwordPasswordListJson = JsonSerializer.Serialize(passwordList);
-            string encryptedPasswordPasswordListJson = EncryptionManager.Encrypt(passwordPasswordListJson);
 
-            File.WriteAllText(savePath, encryptedPasswordPasswordListJson);
+            File.WriteAllText(savePath, passwordPasswordListJson);
         }
 
         public static void ReadEntries(string inputMasterPassword)
@@ -45,9 +47,9 @@ namespace P_Secu_114_WinForms
             }
             else if (!File.Exists(Path.Combine(path, savePath)))
             {
+                //Demander un nouveau masterpassword
                 File.Create(Path.Combine(path, savePath)).Close();
                 MasterPassword.Key = inputMasterPassword;
-                MessageBox.Show(MasterPassword.Key);
                 SaveEntries();
             }
             else
@@ -56,9 +58,8 @@ namespace P_Secu_114_WinForms
                 {
                     MasterPassword.Key = inputMasterPassword;
                     string fileContent = File.ReadAllText(savePath);
-                    string decryptedFileContent = EncryptionManager.Decrypt(fileContent);
 
-                    List<string> passwordList = JsonSerializer.Deserialize<List<string>>(decryptedFileContent);
+                    List<string> passwordList = JsonSerializer.Deserialize<List<string>>(fileContent);
                     
 
                     if (EncryptionManager.Encrypt(inputMasterPassword) != passwordList[0])

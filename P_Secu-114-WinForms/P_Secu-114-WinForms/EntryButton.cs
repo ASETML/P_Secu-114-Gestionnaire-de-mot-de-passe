@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace P_Secu_114_WinForms
 {
+    /// <summary>
+    /// Un bouton qui ouvre un entryForm
+    /// </summary>
     public class EntryButton : Button
     {
         public EntryButton(Entry entry) : base()
@@ -32,9 +35,22 @@ namespace P_Secu_114_WinForms
 
             form.MdiParent = parentParentForm;
             form.Show();
-            form.Left = 15;
+            form.Left = 5;
             form.Top = 15;
             form.Name = this.Tag.ToString();
+
+            //Cache la zone de sélection de mot de passe
+            foreach (Control c in parentParentForm.Controls)
+            {
+                if (c.Text == "Titre" || c.Text == "URL" || c.Text == "Nom d'utilisateur" || c.Text == "Mot de passe" || c.Text == "Ajouter un mot de passe")
+                {
+                    c.Hide();
+                }
+                if (c.GetType() == typeof(TextBox) || c.GetType() == typeof(PictureBox))
+                {
+                    c.Hide();
+                }
+            }
         }
     }
 }
