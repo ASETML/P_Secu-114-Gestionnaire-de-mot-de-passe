@@ -7,61 +7,66 @@ using System.Threading.Tasks;
 namespace P_Secu_114_WinForms
 {
     /// <summary>
-    /// Encrypt password using Vigenère
+    /// Chiffre et déchiffre avec Vigenère
     /// </summary>
     public static class EncryptionManager
     {
         /// <summary>
-        /// Encrypt a text
+        /// Chiffre un texte
         /// </summary>
-        /// <param name="text"></param>
-        /// <param name="key"></param>
-        /// <returns></returns>
+        /// <param name="text">Le texte à chiffrer</param>
+        /// <returns>Un texte chiffré</returns>
         public static string Encrypt(string text)
         {
-            string encryptedText = "";
-            int i = 0;
+            string encryptedText = ""; //Le texte chiffré
+            int keyIndex = 0; //L'index de la clé
 
+            //Pour chaque charactère du texte
             foreach (char c in text)
             {
-                if (i >= MasterPassword.Key.Length)
+                //Si l'index de la clé est plus grand que la longueur de la clé, on revient au début de la clé
+                if (keyIndex >= MasterPassword.Key.Length)
                 {
-                    i = 0;
+                    keyIndex = 0;
                 }
-                int characterValue = (int)c;
-                characterValue += (int)MasterPassword.Key[i];
-                encryptedText += (char)characterValue;
 
-                i++;
+                int characterValue = (int)c; //Le code du caractère à chiffrer
+                characterValue += (int)MasterPassword.Key[keyIndex]; //On ajoute le code du caractère de la clé au code du caratère à chiffrer
+                encryptedText += (char)characterValue; //On ajoute le caractère chiffré au texte chiffré
+
+                keyIndex++; //On incremente l'index de la clé
             }
-            return encryptedText;
+            return encryptedText; //On retourne le texte chiffré
         }
 
         /// <summary>
-        /// Decrypt a text
+        /// Déchiffre un text
         /// </summary>
-        /// <param name="text"></param>
-        /// <param name="key"></param>
-        /// <returns></returns>
+        /// <param name="text">Le texte à déchiffrer</param>
+        /// <returns>Un texte déchiffré</returns>
         public static string Decrypt(string text)
         {
-            string decryptedText = "";
-            int i = 0;
+            string decryptedText = ""; //Le texte déchiffré
+            int keyIndex = 0; //L'index de la clé
+
+            //Pour chaque charactère du texte
             foreach (char c in text)
             {
-                if (i >= MasterPassword.Key.Length)
+                //Si l'index de la clé est plus grand que la longueur de la clé, on revient au début de la clé
+                if (keyIndex >= MasterPassword.Key.Length)
                 {
-                    i = 0;
+                    keyIndex = 0;
                 }
-                int characterValue = (int)c;
-                characterValue -= (int)MasterPassword.Key[i];
 
-                decryptedText += (char)characterValue;
+                int characterValue = (int)c; //Le code du caractère à déchiffrer
+                characterValue -= (int)MasterPassword.Key[keyIndex]; //On soustrait le code du caractère de la clé au code du caratère à déchiffrer
 
-                i++;
-                
+                decryptedText += (char)characterValue; //On ajoute le caractère déchiffré au texte déchiffré
+
+                keyIndex++; //On incremente l'index de la clé
+
             }
-            return decryptedText;
+            return decryptedText; //On retourne le texte déchiffré
         }
     }
 }

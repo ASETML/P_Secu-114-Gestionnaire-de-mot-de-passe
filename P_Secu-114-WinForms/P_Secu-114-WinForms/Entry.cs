@@ -8,14 +8,14 @@ using System.Windows.Forms;
 namespace P_Secu_114_WinForms
 {
     /// <summary>
-    /// An entry (password + username + url)
+    /// Une entrée (titre + mdp + nom d'utilisateur + url)
     /// </summary>
     public class Entry
     {
-        public string Title { get; set; }
-        public string Password { get; set; }
-        public string Username { get; set; }
-        public string Url { get; set; }
+        public string Title { get; set; } //Le titre de l'entrée
+        public string Password { get; set; } //Le mot de passe
+        public string Username { get; set; } //Le nom d'utilisateur
+        public string Url { get; set; } //L'adresse du site
 
         public Entry(string title, string password, string username, string url)
         {
