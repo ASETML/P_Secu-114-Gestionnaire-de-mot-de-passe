@@ -7,18 +7,31 @@ using System.Threading.Tasks;
 namespace P_Secu_114_WinForms
 {
     /// <summary>
-    /// Create, delete, show entrys
+    /// Créer, ajouter, supprimmer des entrées
     /// </summary>
     public static class PasswordManager
     {
-        public static List<Entry> PasswordList { get; set; } = new List<Entry>();
+        public static List<Entry> PasswordList { get; set; } = new List<Entry>(); //La liste de mot de passe
 
+        /// <summary>
+        /// Ajoute une entrée
+        /// </summary>
+        /// <param name="title">Le titre de l'entrée</param>
+        /// <param name="password">Le mot de passe de l'entrée</param>
+        /// <param name="username">Le nom d'utilisateur de l'entrée</param>
+        /// <param name="url">L'adresse du site de l'entrée</param>
         public static void AddEntry(string title, string password, string username, string url)
         {
             PasswordList.Add(new Entry(EncryptionManager.Encrypt(title), EncryptionManager.Encrypt(password), EncryptionManager.Encrypt(username), EncryptionManager.Encrypt(url)));
-            SaveFile.SaveEntries();
+            SaveFile.SaveEntries(); //On sauvegarde les entrées
         }
 
+        /// <summary>
+        /// Modifie une entrée
+        /// </summary>
+        /// <param name="fieldToModify">Le champ à modifier : "title" | "password" | "username" | "url"</param>
+        /// <param name="newValue">La nouvelle valeur du champ</param>
+        /// <param name="entry">L'entrée à modifier</param>
         public static void UpdateEntry(string fieldToModify, string newValue, Entry entry)
         {
             switch (fieldToModify)
@@ -36,13 +49,17 @@ namespace P_Secu_114_WinForms
                     entry.Url = EncryptionManager.Encrypt(newValue);
                     break;
             }
-            SaveFile.SaveEntries();
+            SaveFile.SaveEntries(); //On sauvegarde les entrées
         }
 
+        /// <summary>
+        /// Supprime une entrée
+        /// </summary>
+        /// <param name="entry">l'entrée à supprimer</param>
         public static void RemoveEntry(Entry entry)
         {
-            PasswordList.Remove(entry);
-            SaveFile.SaveEntries();
+            PasswordList.Remove(entry); //Supprime l'entrée de la liste
+            SaveFile.SaveEntries(); //On sauvegarde les entrées
         }
     }
 }

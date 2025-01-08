@@ -13,8 +13,8 @@ namespace P_Secu_114_WinForms
     {
         public EntryButton(Entry entry) : base()
         {
-            Text = EncryptionManager.Decrypt(entry.Title);
-            Tag = entry;
+            Text = EncryptionManager.Decrypt(entry.Title); //Affiche le titre de l'entrée sur le bouton
+            Tag = entry; //On y attache l'entrée
             Click += new EventHandler(this.button_Click);
             this.Width = 150;
         }
@@ -42,10 +42,12 @@ namespace P_Secu_114_WinForms
             //Cache la zone de sélection de mot de passe
             foreach (Control c in parentParentForm.Controls)
             {
+                //Cache les titres
                 if (c.Text == "Titre" || c.Text == "URL" || c.Text == "Nom d'utilisateur" || c.Text == "Mot de passe" || c.Text == "Ajouter un mot de passe")
                 {
                     c.Hide();
                 }
+                //Cache les zones de saisies
                 if (c.GetType() == typeof(TextBox) || c.GetType() == typeof(PictureBox))
                 {
                     c.Hide();
