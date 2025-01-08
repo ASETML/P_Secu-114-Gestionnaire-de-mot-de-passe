@@ -23,18 +23,8 @@ namespace P_Secu_114_WinForms
             NavForm.ShowEntryList();
 
             label1.Hide();
-            label2.Hide();
-            label3.Hide();
-            label4.Hide();
-            label5.Hide();
+            HideAddPassword();
 
-            textBox1.Hide();
-            textBox2.Hide();
-            textBox3.Hide();
-            textBox4.Hide();
-
-            pictureBox2.Hide();
-            button1.Hide();
             this.Controls.Remove(pictureBox1);
             pictureBox1.Hide();
         }
@@ -55,71 +45,86 @@ namespace P_Secu_114_WinForms
             button1.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void HideAddPassword()
         {
-            Application.Exit();
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
+            label5.Hide();
+
+            textBox1.Hide();
+            textBox2.Hide();
+            textBox3.Hide();
+            textBox4.Hide();
+
+            pictureBox2.Hide();
+            button1.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0 && textBox3.Text.Length > 0 && textBox4.Text.Length > 0)
+            Button button = (Button)sender;
+            switch (button.Name)
             {
-                PasswordManager.AddEntry(textBox1.Text, textBox4.Text, textBox3.Text, textBox2.Text);
-                NavForm.ShowEntryList();
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
+                case "button1":
+                    if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0 && textBox3.Text.Length > 0 && textBox4.Text.Length > 0)
+                    {
+                        PasswordManager.AddEntry(textBox1.Text, textBox4.Text, textBox3.Text, textBox2.Text);
+                        NavForm.ShowEntryList();
+                        textBox1.Text = "";
+                        textBox2.Text = "";
+                        textBox3.Text = "";
+                        textBox4.Text = "";
+                    }
+                    break;
+                case "button2":
+                    SaveFile.ReadEntries(textBox5.Text);
+                    NavForm.ShowEntryList();
+                    textBox5.Hide();
+                    button2.Hide();
+                    pictureBox3.Hide();
+                    this.Controls.Remove(textBox5);
+                    this.Controls.Remove(button2);
+                    this.Controls.Remove(pictureBox3);
+
+                    ShowAddPassword();
+                    break;
+                case "button4":
+                    Application.Exit();
+                    break;
             }
         }
 
-        private void MainMenu_Load(object sender, EventArgs e)
+        private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            foreach (Control control in this.Controls)
+            PictureBox pictureBox = (PictureBox)sender;
+            switch (pictureBox.Name)
             {
-                if (control.GetType() == typeof(MdiClient))
-                {
-                    control.BackColor = Color.White;
-                }
+                case "pictureBox2":
+                    textBox4.UseSystemPasswordChar = false;
+                    pictureBox2.Image = Properties.Resources.eye_regular;
+                    break;
+                case "pictureBox3":
+                    textBox5.UseSystemPasswordChar = false;
+                    pictureBox3.Image = Properties.Resources.eye_regular;
+                    break;
             }
         }
 
-        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        private void pictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            textBox4.UseSystemPasswordChar = false;
-            pictureBox2.Image = Properties.Resources.eye_regular;
-        }
-
-        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
-        {
-            textBox4.UseSystemPasswordChar = true;
-            pictureBox2.Image = Properties.Resources.eye_solid;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            SaveFile.ReadEntries(textBox5.Text);
-            NavForm.ShowEntryList();
-            textBox5.Hide();
-            button2.Hide();
-            pictureBox3.Hide();
-            this.Controls.Remove(textBox5);
-            this.Controls.Remove(button2);
-            this.Controls.Remove(pictureBox3);
-
-            ShowAddPassword();
-        }
-
-        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
-        {
-            textBox5.UseSystemPasswordChar = false;
-            pictureBox3.Image = Properties.Resources.eye_regular;
-        }
-
-        private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
-        {
-            textBox5.UseSystemPasswordChar = true;
-            pictureBox3.Image = Properties.Resources.eye_solid;
+            PictureBox pictureBox = (PictureBox)sender;
+            switch (pictureBox.Name)
+            {
+                case "pictureBox2":
+                    textBox4.UseSystemPasswordChar = true;
+                    pictureBox2.Image = Properties.Resources.eye_solid;
+                    break;
+                case "pictureBox3":
+                    textBox5.UseSystemPasswordChar = true;
+                    pictureBox3.Image = Properties.Resources.eye_solid;
+                    break;
+            }
         }
 
         private void MainMenu_Shown(object sender, EventArgs e)

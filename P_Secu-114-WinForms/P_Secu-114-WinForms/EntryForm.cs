@@ -47,24 +47,74 @@ namespace P_Secu_114_WinForms
             textBox4.Width = 450;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            Clipboard.SetText(_url);
+            PictureBox pictureBox = (PictureBox)sender; 
+            switch (pictureBox.Name)
+            {
+                case "pictureBox1":
+                    pictureBox1.Image = Properties.Resources.copy_regular;
+                    break;
+                case "pictureBox2":
+                    pictureBox2.Image = Properties.Resources.copy_regular;
+                    break;
+                case "pictureBox3":
+                    pictureBox3.Image = Properties.Resources.copy_regular;
+                    break;
+                case "pictureBox4":
+                    textBox3.UseSystemPasswordChar = false;
+                    pictureBox4.Image = Properties.Resources.eye_regular;
+                    break;
+            }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            Clipboard.SetText(_userName);
+            PictureBox pictureBox = (PictureBox)sender;
+            switch (pictureBox.Name)
+            {
+                case "pictureBox1":
+                    pictureBox1.Image = Properties.Resources.copy_solid;
+                    break;
+                case "pictureBox2":
+                    pictureBox2.Image = Properties.Resources.copy_solid;
+                    break;
+                case "pictureBox3":
+                    pictureBox3.Image = Properties.Resources.copy_solid;
+                    break;
+                case "pictureBox4":
+                    textBox3.UseSystemPasswordChar = true;
+                    pictureBox4.Image = Properties.Resources.eye_solid;
+                    break;
+            }
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void pictureBox_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(_password);
+            PictureBox pictureBox = (PictureBox)sender;
+            switch (pictureBox.Name)
+            {
+                case "pictureBox1":
+                    Clipboard.SetText(_url);
+                    break;
+                case "pictureBox2":
+                    Clipboard.SetText(_userName);
+                    break;
+                case "pictureBox3":
+                    Clipboard.SetText(_password);
+                    break;
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_Click(object sender, EventArgs e)
         {
-            PasswordManager.RemoveEntry(_entry);
+            Button button = (Button)sender;
+            switch (button.Name)
+            {
+                case "button1":
+                    PasswordManager.RemoveEntry(_entry);
+                    break;
+            }
 
             Navigation form = new Navigation((MainMenu)this.ParentForm);
             MainMenu parentForm = (MainMenu)this.ParentForm;
@@ -87,104 +137,24 @@ namespace P_Secu_114_WinForms
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void updateButton_Click(object sender, EventArgs e)
         {
-            Navigation form = new Navigation((MainMenu)this.ParentForm);
-            MainMenu parentForm = (MainMenu)this.ParentForm;
-            parentForm.NavForm = form;
-
-            foreach (Control c in parentForm.Controls)
+            Button button = (Button)sender;
+            switch (button.Name)
             {
-                if (c.Text == "Titre" || c.Text == "URL" || c.Text == "Nom d'utilisateur" || c.Text == "Mot de passe" || c.Text == "Ajouter un mot de passe")
-                {
-                    c.Show();
-                }
-                if (c.GetType() == typeof(TextBox) || c.GetType() == typeof(PictureBox))
-                {
-                    c.Show();
-                }
+                case "button3":
+                    _entry.Title = EncryptionManager.Encrypt(textBox1.Text);
+                    break;
+                case "button4":
+                    _entry.Url = EncryptionManager.Encrypt(textBox2.Text);
+                    break;
+                case "button5":
+                    _entry.Username = EncryptionManager.Encrypt(textBox4.Text);
+                    break;
+                case "button6":
+                    _entry.Password = EncryptionManager.Encrypt(textBox3.Text);
+                    break;
             }
-
-            form.Show();
-            form.ShowEntryList();
-            this.Close();
-        }
-
-        private void pictureBox4_MouseDown(object sender, MouseEventArgs e)
-        {
-            textBox3.UseSystemPasswordChar = false;
-            pictureBox4.Image = Properties.Resources.eye_regular;
-        }
-
-        private void pictureBox4_MouseUp(object sender, MouseEventArgs e)
-        {
-            textBox3.UseSystemPasswordChar = true;
-            pictureBox4.Image = Properties.Resources.eye_solid;
-        }
-
-        private void pictureBox5_MouseDown(object sender, MouseEventArgs e)
-        {
-            textBox4.UseSystemPasswordChar = false;
-            pictureBox5.Image = Properties.Resources.eye_regular;
-        }
-
-        private void pictureBox5_MouseUp(object sender, MouseEventArgs e)
-        {
-            textBox4.UseSystemPasswordChar = true;
-            pictureBox5.Image = Properties.Resources.eye_solid;
-        }
-
-        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
-        {
-            pictureBox1.Image = Properties.Resources.copy_regular;
-        }
-
-        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
-        {
-            pictureBox1.Image = Properties.Resources.copy_solid;
-        }
-
-        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
-        {
-            pictureBox2.Image = Properties.Resources.copy_regular;
-        }
-
-        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
-        {
-            pictureBox2.Image = Properties.Resources.copy_solid;
-        }
-
-        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
-        {
-            pictureBox3.Image = Properties.Resources.copy_regular;
-        }
-
-        private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
-        {
-            pictureBox3.Image = Properties.Resources.copy_solid;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            _entry.Title = EncryptionManager.Encrypt(textBox1.Text);
-            SaveFile.SaveEntries();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            _entry.Url = EncryptionManager.Encrypt(textBox2.Text);
-            SaveFile.SaveEntries();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            _entry.Username = EncryptionManager.Encrypt(textBox4.Text);
-            SaveFile.SaveEntries();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            _entry.Password = EncryptionManager.Encrypt(textBox3.Text);
             SaveFile.SaveEntries();
         }
     }
