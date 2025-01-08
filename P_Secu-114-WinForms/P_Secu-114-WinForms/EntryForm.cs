@@ -144,15 +144,19 @@ namespace P_Secu_114_WinForms
             {
                 case "button3":
                     _entry.Title = EncryptionManager.Encrypt(textBox1.Text);
+                    _title = textBox1.Text;
                     break;
                 case "button4":
                     _entry.Url = EncryptionManager.Encrypt(textBox2.Text);
+                    _url = textBox2.Text;
                     break;
                 case "button5":
                     _entry.Username = EncryptionManager.Encrypt(textBox4.Text);
+                    _userName = textBox4.Text;
                     break;
                 case "button6":
                     _entry.Password = EncryptionManager.Encrypt(textBox3.Text);
+                    _password = textBox3.Text;
                     break;
             }
             SaveFile.SaveEntries();

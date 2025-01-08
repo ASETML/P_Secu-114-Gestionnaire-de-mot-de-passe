@@ -66,7 +66,7 @@ namespace P_Secu_114_WinForms
                     SaveEntries();
                 }
                 //Si le mot de passe est correct
-                if (EncryptionManager.Encrypt(inputMasterPassword) == File.ReadAllText(configFile)) ;
+                if (EncryptionManager.Encrypt(inputMasterPassword) == File.ReadAllText(configFile));
                 {
                     string[] files = Directory.GetFiles(savePath); //Récupère les noms des fichiers
 
@@ -77,6 +77,7 @@ namespace P_Secu_114_WinForms
                     }
                     return;
                 }
+
                 throw new WrongPasswordException("Mauvais mot de passe");
             }
             catch (Exception ex)
