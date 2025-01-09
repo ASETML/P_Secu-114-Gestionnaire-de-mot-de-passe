@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\doc\\Documents\\GitHub\\P_Secu-114-Gestionnaire-de-mot-de-passe\\P_Secu-114-WinForms\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5258D2B3-9A6C-4DDB-84DF-BA2365F1751B}|P_Secu-114-WinForms\\P_Secu-114-WinForms.csproj|c:\\users\\doc\\documents\\github\\p_secu-114-gestionnaire-de-mot-de-passe\\p_secu-114-winforms\\p_secu-114-winforms\\entryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5258D2B3-9A6C-4DDB-84DF-BA2365F1751B}|P_Secu-114-WinForms\\P_Secu-114-WinForms.csproj|solutionrelative:p_secu-114-winforms\\entryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5258D2B3-9A6C-4DDB-84DF-BA2365F1751B}|P_Secu-114-WinForms\\P_Secu-114-WinForms.csproj|c:\\users\\doc\\documents\\github\\p_secu-114-gestionnaire-de-mot-de-passe\\p_secu-114-winforms\\p_secu-114-winforms\\savefile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5258D2B3-9A6C-4DDB-84DF-BA2365F1751B}|P_Secu-114-WinForms\\P_Secu-114-WinForms.csproj|solutionrelative:p_secu-114-winforms\\savefile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5258D2B3-9A6C-4DDB-84DF-BA2365F1751B}|P_Secu-114-WinForms\\P_Secu-114-WinForms.csproj|C:\\Users\\doc\\Documents\\GitHub\\P_Secu-114-Gestionnaire-de-mot-de-passe\\P_Secu-114-WinForms\\p_secu-114-winforms\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
       "RelativeMoniker": "D:0:0:{5258D2B3-9A6C-4DDB-84DF-BA2365F1751B}|P_Secu-114-WinForms\\P_Secu-114-WinForms.csproj|solutionrelative:p_secu-114-winforms\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5258D2B3-9A6C-4DDB-84DF-BA2365F1751B}|P_Secu-114-WinForms\\P_Secu-114-WinForms.csproj|c:\\users\\doc\\documents\\github\\p_secu-114-gestionnaire-de-mot-de-passe\\p_secu-114-winforms\\p_secu-114-winforms\\entryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5258D2B3-9A6C-4DDB-84DF-BA2365F1751B}|P_Secu-114-WinForms\\P_Secu-114-WinForms.csproj|solutionrelative:p_secu-114-winforms\\entryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5258D2B3-9A6C-4DDB-84DF-BA2365F1751B}|P_Secu-114-WinForms\\P_Secu-114-WinForms.csproj|c:\\users\\doc\\documents\\github\\p_secu-114-gestionnaire-de-mot-de-passe\\p_secu-114-winforms\\p_secu-114-winforms\\encryptionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -85,7 +85,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -93,7 +93,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "EntryButton.cs",
               "DocumentMoniker": "C:\\Users\\doc\\Documents\\GitHub\\P_Secu-114-Gestionnaire-de-mot-de-passe\\P_Secu-114-WinForms\\P_Secu-114-WinForms\\EntryButton.cs",
               "RelativeDocumentMoniker": "P_Secu-114-WinForms\\EntryButton.cs",
@@ -105,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainMenu.cs [Design]",
               "DocumentMoniker": "C:\\Users\\doc\\Documents\\GitHub\\P_Secu-114-Gestionnaire-de-mot-de-passe\\P_Secu-114-WinForms\\P_Secu-114-WinForms\\MainMenu.cs",
               "RelativeDocumentMoniker": "P_Secu-114-WinForms\\MainMenu.cs",
@@ -117,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "C:\\Users\\doc\\Documents\\GitHub\\P_Secu-114-Gestionnaire-de-mot-de-passe\\P_Secu-114-WinForms\\P_Secu-114-WinForms\\MainMenu.cs",
               "RelativeDocumentMoniker": "P_Secu-114-WinForms\\MainMenu.cs",
@@ -130,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\doc\\Documents\\GitHub\\P_Secu-114-Gestionnaire-de-mot-de-passe\\P_Secu-114-WinForms\\P_Secu-114-WinForms\\Program.cs",
               "RelativeDocumentMoniker": "P_Secu-114-WinForms\\Program.cs",
@@ -143,13 +143,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "SaveFile.cs",
               "DocumentMoniker": "C:\\Users\\doc\\Documents\\GitHub\\P_Secu-114-Gestionnaire-de-mot-de-passe\\P_Secu-114-WinForms\\P_Secu-114-WinForms\\SaveFile.cs",
               "RelativeDocumentMoniker": "P_Secu-114-WinForms\\SaveFile.cs",
               "ToolTip": "C:\\Users\\doc\\Documents\\GitHub\\P_Secu-114-Gestionnaire-de-mot-de-passe\\P_Secu-114-WinForms\\P_Secu-114-WinForms\\SaveFile.cs",
               "RelativeToolTip": "P_Secu-114-WinForms\\SaveFile.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAmwEAAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAmwEkAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-16T11:30:58.38Z",
               "EditorCaption": ""
@@ -168,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Resources.resx",
               "DocumentMoniker": "C:\\Users\\doc\\Documents\\GitHub\\P_Secu-114-Gestionnaire-de-mot-de-passe\\P_Secu-114-WinForms\\P_Secu-114-WinForms\\Properties\\Resources.resx",
               "RelativeDocumentMoniker": "P_Secu-114-WinForms\\Properties\\Resources.resx",
@@ -179,13 +179,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "EntryForm.cs",
               "DocumentMoniker": "C:\\Users\\doc\\Documents\\GitHub\\P_Secu-114-Gestionnaire-de-mot-de-passe\\P_Secu-114-WinForms\\P_Secu-114-WinForms\\EntryForm.cs",
               "RelativeDocumentMoniker": "P_Secu-114-WinForms\\EntryForm.cs",
               "ToolTip": "C:\\Users\\doc\\Documents\\GitHub\\P_Secu-114-Gestionnaire-de-mot-de-passe\\P_Secu-114-WinForms\\P_Secu-114-WinForms\\EntryForm.cs",
               "RelativeToolTip": "P_Secu-114-WinForms\\EntryForm.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAgwHwAAABCAAAA",
+              "ViewState": "AgIAAIoAAAAAAAAAAADwv54AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-16T11:30:58.357Z",
               "EditorCaption": ""
